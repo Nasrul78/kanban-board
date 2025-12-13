@@ -12,7 +12,7 @@ import {
   InputGroupInput,
 } from "@/components/ui/input-group"
 import useBoardsQuery from "@/hooks/useBoardQuery"
-import { BOARDS_DUMMY } from "@/lib/constant"
+import { BOARDS_DUMMY } from "@/lib/dummyData"
 import filterBoards from "@/lib/filterBoards"
 import { Activity, Board, User } from "@/types"
 import {

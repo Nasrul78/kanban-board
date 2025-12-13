@@ -12,7 +12,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
-import { BOARDS_DUMMY } from "@/lib/constant"
+import { BOARDS_DUMMY } from "@/lib/dummyData"
 import { usePathname } from "next/navigation"
 
 const Navbar = () => {
