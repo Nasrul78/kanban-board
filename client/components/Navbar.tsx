@@ -12,7 +12,7 @@ const Navbar = () => {
   const isSignedIn = true
 
   return (
-    <header className="bg-navbar fixed w-screen z-10">
+    <header className="bg-navbar sticky w-screen">
       <div className="container mx-auto py-2 items-center flex justify-between">
         <Link href="/" className="space-x-2 flex">
           <ListTodo className="size-8" />
@@ -23,12 +23,12 @@ const Navbar = () => {
           <UserDropdown {...user} />
         ) : (
           <nav className="space-x-2">
-            <Link href="/sign-in">
-              <Button variant="ghost">Sign in</Button>
-            </Link>
-            <Link href="/sign-up">
-              <Button>Sign up</Button>
-            </Link>
+            <Button asChild variant="ghost">
+              <Link href="/sign-in">Sign in</Link>
+            </Button>
+            <Button asChild>
+              <Link href="/sign-up">Sign up</Link>
+            </Button>
           </nav>
         )}
       </div>

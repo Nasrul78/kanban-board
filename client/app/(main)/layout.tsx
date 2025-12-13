@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar"
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main>
+    <main className="max-w-screen overflow-hidden">
       <Navbar />
       {children}
     </main>
