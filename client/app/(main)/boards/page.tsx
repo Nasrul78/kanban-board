@@ -2,13 +2,8 @@ import ActivityCard from "@/components/ActivityCard"
 import BoardCard from "@/components/BoardCard"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import {
-  InputGroup,
-  InputGroupAddon,
-  InputGroupInput,
-} from "@/components/ui/input-group"
 import { BOARDS_DUMMY } from "@/lib/constant"
-import { Activity, Board, User } from "@/types"
+import { Activity, User } from "@/types"
 import {
   AlertTriangle,
   ArrowRight,
@@ -16,7 +11,6 @@ import {
   Grid2X2,
   History,
   Plus,
-  Search,
   Star,
   UserCheck,
 } from "lucide-react"
