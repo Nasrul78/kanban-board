@@ -44,7 +44,7 @@ const Navbar = () => {
                   Recent
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  {data.map(({ id, title, description }) => (
+                  {data.slice(0, 5).map(({ id, title, description }) => (
                     <NavigationMenuLink asChild key={id} className="w-50">
                       <Link href={id}>
                         <h3 className="text-sm font-medium">{title}</h3>
@@ -62,6 +62,7 @@ const Navbar = () => {
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   {data
+                    .slice(0, 5)
                     .filter(({ starred }) => starred)
                     .map(({ id, title, description }) => (
                       <NavigationMenuLink asChild key={id} className="w-50">
