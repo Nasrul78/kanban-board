@@ -215,4 +215,194 @@ export const BOARDS_DUMMY: Board[] = [
     createdAt: "2025-12-09T01:30:00Z",
     updatedAt: "2025-12-12T09:00:00Z",
   },
+  {
+    id: "board-5",
+    title: "Exam Preparation",
+    description: "Preparing for upcoming school exams",
+    starred: false,
+    members: [{ id: "u1", name: "Simol", avatarUrl: "/avatars/1.png" }],
+    columns: [
+      {
+        id: "col-13",
+        title: "Subjects",
+        order: 1,
+        tasks: [
+          {
+            id: "task-13",
+            title: "Math revision",
+            priority: "high",
+            dueDate: "2025-12-22",
+            createdAt: "2025-12-14T02:00:00Z",
+          },
+          {
+            id: "task-14",
+            title: "Physics formulas",
+            priority: "medium",
+            createdAt: "2025-12-15T03:30:00Z",
+          },
+        ],
+      },
+      {
+        id: "col-14",
+        title: "Studying",
+        order: 2,
+        tasks: [],
+      },
+      {
+        id: "col-15",
+        title: "Completed",
+        order: 3,
+        tasks: [],
+      },
+    ],
+    createdAt: "2025-12-14T01:00:00Z",
+    updatedAt: "2025-12-15T04:00:00Z",
+  },
+
+  {
+    id: "board-6",
+    title: "UI / UX Ideas",
+    description: "Design inspiration and UI experiments",
+    starred: true,
+    members: [
+      { id: "u1", name: "Simol", avatarUrl: "/avatars/1.png" },
+      { id: "u4", name: "Rina", avatarUrl: "/avatars/4.png" },
+    ],
+    columns: [
+      {
+        id: "col-16",
+        title: "Ideas",
+        order: 1,
+        tasks: [
+          {
+            id: "task-15",
+            title: "Minimal board card design",
+            priority: "medium",
+            createdAt: "2025-12-11T06:00:00Z",
+          },
+        ],
+      },
+      {
+        id: "col-17",
+        title: "Designing",
+        order: 2,
+        tasks: [
+          {
+            id: "task-16",
+            title: "Dark theme color palette",
+            priority: "high",
+            assignee: { id: "u4", name: "Rina" },
+            createdAt: "2025-12-12T08:15:00Z",
+          },
+        ],
+      },
+      {
+        id: "col-18",
+        title: "Done",
+        order: 3,
+        tasks: [],
+      },
+    ],
+    createdAt: "2025-12-10T02:00:00Z",
+    updatedAt: "2025-12-13T09:30:00Z",
+  },
+
+  {
+    id: "board-7",
+    title: "Bug Tracker",
+    description: "Tracking bugs and regressions",
+    starred: false,
+    members: [
+      { id: "u1", name: "Simol", avatarUrl: "/avatars/1.png" },
+      { id: "u2", name: "Alex", avatarUrl: "/avatars/2.png" },
+    ],
+    columns: [
+      {
+        id: "col-19",
+        title: "Reported",
+        order: 1,
+        tasks: [
+          {
+            id: "task-17",
+            title: "Search input lag",
+            priority: "high",
+            createdAt: "2025-12-13T05:00:00Z",
+          },
+        ],
+      },
+      {
+        id: "col-20",
+        title: "Fixing",
+        order: 2,
+        tasks: [
+          {
+            id: "task-18",
+            title: "Scrollbar overlap on macOS",
+            priority: "urgent",
+            assignee: { id: "u2", name: "Alex" },
+            createdAt: "2025-12-14T07:30:00Z",
+          },
+        ],
+      },
+      {
+        id: "col-21",
+        title: "Resolved",
+        order: 3,
+        tasks: [],
+      },
+    ],
+    createdAt: "2025-12-13T04:00:00Z",
+    updatedAt: "2025-12-15T08:00:00Z",
+  },
+
+  {
+    id: "board-8",
+    title: "Learning Roadmap",
+    description: "Tracking learning progress and goals",
+    starred: false,
+    members: [{ id: "u1", name: "Simol", avatarUrl: "/avatars/1.png" }],
+    columns: [
+      {
+        id: "col-22",
+        title: "Planned",
+        order: 1,
+        tasks: [
+          {
+            id: "task-19",
+            title: "Learn React Server Components",
+            priority: "medium",
+            createdAt: "2025-12-10T02:30:00Z",
+          },
+        ],
+      },
+      {
+        id: "col-23",
+        title: "In Progress",
+        order: 2,
+        tasks: [
+          {
+            id: "task-20",
+            title: "Understand hooks rules",
+            priority: "high",
+            createdAt: "2025-12-11T06:45:00Z",
+          },
+        ],
+      },
+      {
+        id: "col-24",
+        title: "Completed",
+        order: 3,
+        tasks: [
+          {
+            id: "task-21",
+            title: "Basics of Next.js App Router",
+            priority: "low",
+            createdAt: "2025-12-09T01:00:00Z",
+          },
+        ],
+      },
+    ],
+    createdAt: "2025-12-09T00:30:00Z",
+    updatedAt: "2025-12-14T10:00:00Z",
+  },
 ]
