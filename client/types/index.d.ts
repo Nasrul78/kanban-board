@@ -2,6 +2,7 @@ export interface User {
   id?: string
   name: string
   email?: string
+  avatarColor?: string
   avatarUrl?: string
 }
 
@@ -13,11 +14,7 @@ export interface Task {
   description?: string
   priority: TaskPriority
   dueDate?: string
-  assignee?: {
-    id: string
-    name: string
-    avatarUrl?: string
-  }
+  assignee?: User[]
   createdAt: string
 }
 
@@ -28,6 +25,28 @@ export interface Column {
   tasks: Task[]
 }
 
+export type BoardColors =
+  | "red"
+  | "orange"
+  | "amber"
+  | "yellow"
+  | "lime"
+  | "green"
+  | "emerald"
+  | "teal"
+  | "cyan"
+  | "sky"
+  | "blue"
+  | "indigo"
+  | "violet"
+  | "purple"
+  | "fuchsia"
+  | "pink"
+  | "rose"
+  | "slate"
+  | "zinc"
+  | "stone"
+
 export interface Board {
   id: string
   title: string
@@ -36,6 +55,7 @@ export interface Board {
   creatorId: string
   members: User[]
   columns: Column[]
+  color: string
   createdAt: string
   updatedAt: string
 }
