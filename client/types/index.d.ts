@@ -48,3 +48,7 @@ export interface Activity {
   value: string
   icon: LucideIcon
 }
+
+export type BoardFilter = "all" | "starred" | "shared" | "created"
+
+export type BoardSort = "updated" | "created" | "title_asc" | "title_desc"
