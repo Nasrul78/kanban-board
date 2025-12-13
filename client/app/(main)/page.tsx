@@ -29,7 +29,7 @@ export default function HomePage() {
 
   return (
     <div className="text-center">
-      <section className="container mx-auto flex items-center flex-col min-h-screen justify-center">
+      <section className="container mx-auto pb-12 flex items-center flex-col min-h-screen justify-center">
         <h1 className="text-6xl font-bold mb-6">
           Organize work and life,{" "}
           <span className="text-blue-600">finally.</span>
@@ -58,7 +58,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="container mx-auto flex flex-col min-h-screen items-center justify-center">
+      <section className="container mx-auto pb-24 flex flex-col min-h-screen items-center justify-center">
         <div className="mb-16">
           <h2 className="text-4xl font-bold mb-4">
             Everything you need to stay organized
@@ -68,11 +68,11 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-4 gap-12">
+        <div className="grid grid-cols-4 gap-12 max-w-5xl mx-auto">
           {features.map((feature, index) => (
             <Card
               key={index}
-              className="border-0 gap-4! aspect-square justify-center scale-100 hover:scale-110 p-4 transition-all">
+              className="border-0 gap-4! p-4 justify-center aspect-square scale-100 hover:scale-110 transition-all">
               <feature.icon className="size-12 p-2 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mx-auto" />
               <CardTitle className="text-lg">{feature.title}</CardTitle>
               <CardDescription>{feature.description}</CardDescription>
@@ -90,7 +90,11 @@ export default function HomePage() {
           their work.
         </p>
 
-        <Button asChild size="lg" className="px-8 py-6 text-lg">
+        <Button
+          asChild
+          size="lg"
+          variant="secondary"
+          className="px-8 py-6 text-lg">
           <Link href="/sign-up">
             Start organizing your work
             <ArrowRight className="ml-2 size-5 stroke-2" />
