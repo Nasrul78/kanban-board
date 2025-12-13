@@ -23,12 +23,12 @@ const Navbar = () => {
           <UserDropdown {...user} />
         ) : (
           <nav className="space-x-2">
-            <Link href="/sign-in">
-              <Button variant="ghost">Sign in</Button>
-            </Link>
-            <Link href="/sign-up">
-              <Button>Sign up</Button>
-            </Link>
+            <Button asChild variant="ghost">
+              <Link href="/sign-in">Sign in</Link>
+            </Button>
+            <Button asChild>
+              <Link href="/sign-up">Sign up</Link>
+            </Button>
           </nav>
         )}
       </div>

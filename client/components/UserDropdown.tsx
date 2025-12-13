@@ -37,25 +37,28 @@ const UserDropdown = ({ name, email, color }: Props) => {
           </Link>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <Link href="/boards">
-          <DropdownMenuItem className="flex items-center">
+        <DropdownMenuItem asChild className="flex items-center">
+          <Link href="/boards">
             <Grid2X2 />
             Boards
-          </DropdownMenuItem>
-        </Link>
-        <Link href="/profile">
-          <DropdownMenuItem className="flex items-center">
+          </Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem asChild className="flex items-center">
+          <Link href="/profile">
             <User />
             Profile
-          </DropdownMenuItem>
-        </Link>
+          </Link>
+        </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <Link href="/sign-out">
-          <DropdownMenuItem className="flex items-center" variant="destructive">
+        <DropdownMenuItem
+          asChild
+          className="flex items-center"
+          variant="destructive">
+          <Link href="/sign-out">
             <LogOut />
             Sign out
-          </DropdownMenuItem>
-        </Link>
+          </Link>
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   )

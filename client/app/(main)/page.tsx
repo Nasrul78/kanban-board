@@ -1,11 +1,5 @@
 import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import { Card, CardDescription, CardTitle } from "@/components/ui/card"
 import { CheckSquare, Users, Zap, Shield, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
@@ -48,17 +42,19 @@ export default function HomePage() {
         </p>
 
         <div className="flex space-x-8 justify-center">
-          <Link href="/sign-up">
-            <Button size="lg" className="px-8 py-6 text-lg">
+          <Button asChild size="lg" className="px-8 py-6 text-lg">
+            <Link href="/sign-up">
               Start for free
               <ArrowRight className="ml-2 size-5 stroke-2" />
-            </Button>
-          </Link>
-          <Link href="/video">
-            <Button variant="outline" size="lg" className="px-8 py-6 text-lg">
-              Watch demo
-            </Button>
-          </Link>
+            </Link>
+          </Button>
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="px-8 py-6 text-lg">
+            <Link href="/video">Watch demo</Link>
+          </Button>
         </div>
       </section>
 
@@ -72,18 +68,14 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-4 gap-8">
+        <div className="grid grid-cols-4 gap-12">
           {features.map((feature, index) => (
             <Card
               key={index}
-              className="border-0 scale-100 hover:scale-110 transition-all">
-              <CardHeader>
-                <feature.icon className="size-12 p-2 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mx-auto" />
-                <CardTitle className="text-lg">{feature.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>{feature.description}</CardDescription>
-              </CardContent>
+              className="border-0 gap-4! aspect-square justify-center scale-100 hover:scale-110 p-4 transition-all">
+              <feature.icon className="size-12 p-2 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mx-auto" />
+              <CardTitle className="text-lg">{feature.title}</CardTitle>
+              <CardDescription>{feature.description}</CardDescription>
             </Card>
           ))}
         </div>
@@ -98,12 +90,12 @@ export default function HomePage() {
           their work.
         </p>
 
-        <Link href="/sign-up">
-          <Button size="lg" variant="secondary" className="px-8 py-6 text-lg">
+        <Button asChild size="lg" className="px-8 py-6 text-lg">
+          <Link href="/sign-up">
             Start organizing your work
             <ArrowRight className="ml-2 size-5 stroke-2" />
-          </Button>
-        </Link>
+          </Link>
+        </Button>
       </section>
     </div>
   )
