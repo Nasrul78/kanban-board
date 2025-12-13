@@ -59,6 +59,7 @@ const BoardList = () => {
   ]
 
   const user: User = {
+    id: "u1",
     name: "John Doe",
     email: "k3CwI@example.com",
   }
@@ -69,11 +70,19 @@ const BoardList = () => {
   }, [search])
 
   useEffect(() => {
-    setFilteredBoards(filterBoards({ boards: data, input, filter, sort }))
-  }, [data, input, filter, sort])
+    setFilteredBoards(
+      filterBoards({
+        boards: data,
+        userId: user.id ?? "",
+        search: input,
+        filter,
+        sort,
+      })
+    )
+  }, [data, input, filter, sort, user.id])
 
   return (
-    <div className="container mx-auto my-8 space-y-8 flex flex-col">
+    <div className="container mx-auto my-8">
       <section>
         <h1 className="text-4xl font-bold mb-2">
           Welcome back, {user.name ?? user.email}!
@@ -87,14 +96,14 @@ const BoardList = () => {
       </section>
 
       {data.filter((board) => board.starred).length > 0 && (
-        <section>
+        <section className="mt-12">
           <div className="flex items-center justify-between mb-4">
             <div className="flex space-x-2 items-center">
               <Star className="stroke-3 size-8 mb-1" />
               <h2 className="text-4xl font-bold">Starred Boards</h2>
             </div>
             <Button asChild variant="link" className="items-center" size="lg">
-              <Link href="/boards?starred=true">
+              <Link href="/boards?filter=starred#allBoards">
                 View all
                 <ArrowRight />
               </Link>
@@ -108,7 +117,7 @@ const BoardList = () => {
         </section>
       )}
 
-      <section className="min-h-screen">
+      <section className="min-h-screen pt-6 mt-6" id="allBoards">
         <div className="flex items-center justify-between mb-2">
           <div className="flex space-x-2 items-center">
             <Grid2X2 className="stroke-3 size-8" />

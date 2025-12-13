@@ -1,7 +1,7 @@
 export interface User {
   id?: string
   name: string
-  email: string
+  email?: string
   avatarUrl?: string
 }
 
@@ -33,11 +33,8 @@ export interface Board {
   title: string
   description?: string
   starred: boolean
-  members: {
-    id: string
-    name: string
-    avatarUrl?: string
-  }[]
+  creatorId: string
+  members: User[]
   columns: Column[]
   createdAt: string
   updatedAt: string
@@ -50,5 +47,4 @@ export interface Activity {
 }
 
 export type BoardFilter = "all" | "starred" | "shared" | "created"
-
 export type BoardSort = "updated" | "created" | "title_asc" | "title_desc"
