@@ -86,25 +86,27 @@ const BoardList = () => {
         </div>
       </section>
 
-      <section>
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex space-x-2 items-center">
-            <Star className="stroke-3 size-8 mb-1" />
-            <h2 className="text-4xl font-bold">Starred Boards</h2>
+      {data.filter((board) => board.starred).length > 0 && (
+        <section>
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex space-x-2 items-center">
+              <Star className="stroke-3 size-8 mb-1" />
+              <h2 className="text-4xl font-bold">Starred Boards</h2>
+            </div>
+            <Button asChild variant="link" className="items-center" size="lg">
+              <Link href="/boards?starred=true">
+                View all
+                <ArrowRight />
+              </Link>
+            </Button>
           </div>
-          <Button asChild variant="link" className="items-center" size="lg">
-            <Link href="/boards?starred=true">
-              View all
-              <ArrowRight />
-            </Link>
-          </Button>
-        </div>
-        <div className="grid grid-cols-4 gap-6">
-          {data
-            .filter((board) => board.starred)
-            .map((board) => BoardCard(board))}
-        </div>
-      </section>
+          <div className="grid grid-cols-4 gap-6">
+            {data
+              .filter((board) => board.starred)
+              .map((board) => BoardCard(board))}
+          </div>
+        </section>
+      )}
 
       <section className="min-h-screen">
         <div className="flex items-center justify-between mb-2">
@@ -127,7 +129,7 @@ const BoardList = () => {
             <h3 className="text-lg">Sort by</h3>
             <BoardsSort />
           </div>
-          <div className="ml-auto">
+          <div className="ml-auto w-100">
             <h3 className="text-lg">Search</h3>
             <InputGroup>
               <InputGroupInput
@@ -140,26 +142,45 @@ const BoardList = () => {
               <InputGroupAddon>
                 <Search />
               </InputGroupAddon>
-              <InputGroupAddon align="inline-end">12 results</InputGroupAddon>
-              <InputGroupAddon align="inline-end">
-                <X />
-              </InputGroupAddon>
+              {input && (
+                <>
+                  <InputGroupAddon align="inline-end">
+                    {filteredBoards?.length} results
+                  </InputGroupAddon>
+                  <InputGroupAddon
+                    className="cursor-pointer"
+                    align="inline-end"
+                    onClick={() => {
+                      setInput("")
+                      setSearch("")
+                    }}>
+                    <X />
+                  </InputGroupAddon>
+                </>
+              )}
             </InputGroup>
           </div>
         </div>
 
-        <div className="grid grid-cols-4 gap-6">
-          {filteredBoards && filteredBoards?.length > 0 ? (
-            filteredBoards.map((board) => BoardCard(board))
-          ) : (
-            <p>not found</p>
-          )}
-
-          <Card className="text-muted-foreground hover:text-foreground aspect-square w-full hover:scale-105 gap-4 transition-all flex flex-col justify-center items-center">
-            <Plus className="size-12" />
-            <p className="text-2xl">Create New Board</p>
-          </Card>
-        </div>
+        {filteredBoards && filteredBoards?.length > 0 ? (
+          <div className="grid grid-cols-4 gap-6">
+            {filteredBoards.map((board) => BoardCard(board))}
+            <Card className="text-muted-foreground hover:text-foreground aspect-square w-full hover:scale-105 gap-4 transition-all flex flex-col justify-center items-center">
+              <Plus className="size-12" />
+              <p className="text-2xl">Create New Board</p>
+            </Card>
+          </div>
+        ) : (
+          <div className="flex items-center flex-col gap-4">
+            <p className="text-muted-foreground text-center text-2xl">
+              No boards found.
+            </p>
+            <Button className="items-center p-8! text-xl">
+              <Plus className="stroke-3 mb-0.5" />
+              Create a board
+            </Button>
+          </div>
+        )}
       </section>
     </div>
   )
